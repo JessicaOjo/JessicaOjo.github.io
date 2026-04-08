@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jessica O. Ojo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f7;
+    --surface: #f2f0ec;
+    --text: #1a1917;
+    --muted: #6b6860;
+    --accent: #1a1917;
+    --line: #e0ddd8;
+    --tag-bg: #eceae5;
+    --tag-text: #3d3c39;
+    --link: #2c5f8a;
+    --award: #7a4f1e;
+    --award-bg: #fdf3e3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    z-index: 100;
+    padding: 0 2rem;
+  }
+
+  .nav-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+
+  .nav-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.75rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  /* LAYOUT */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  section {
+    padding-top: 5rem;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* HERO */
+  #about {
+    padding-top: 4.5rem;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 14px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-bio {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--text);
+    max-width: 540px;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.75rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-links a {
+    font-size: 12.5px;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    padding: 6px 14px;
+    border-radius: 3px;
+    transition: all 0.15s;
+    letter-spacing: 0.03em;
+  }
+
+  .hero-links a:hover {
+    color: var(--text);
+    border-color: var(--text);
+    background: var(--surface);
+  }
+
+  .hero-avatar {
+    width: 220px;
+    height: 250px;
+    border-radius: 4px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    color: var(--muted);
+    overflow: hidden;
+    justify-self: end;
+  }
+
+  .hero-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* NEWS */
+  .news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .news-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+  }
+
+  .news-item:first-child {
+    border-top: 1px solid var(--line);
+  }
+
+  .news-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+    padding-top: 2px;
+  }
+
+  .news-text {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  .news-text a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+
+  .news-text a:hover { border-color: var(--link); }
+
+  .badge {
+    display: inline-block;
+    font-size: 10.5px;
+    font-family: 'DM Mono', monospace;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: 0.04em;
+  }
+
+  .badge-award {
+    background: var(--award-bg);
+    color: var(--award);
+  }
+
+  .badge-new {
+    background: #e8f0f8;
+    color: #1e4d7a;
+  }
+
+  /* EXPERIENCE */
+  .exp-item {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .exp-item:first-child { border-top: 1px solid var(--line); }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .exp-role {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .exp-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
+
+  .exp-company {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0.85rem;
+  }
+
+  .exp-bullets {
+    padding-left: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .exp-bullets li {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #3a3935;
+  }
+
+  /* PUBLICATIONS */
+  .pub-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .pub-item:first-child { border-top: 1px solid var(--line); }
+
+  .pub-title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.45;
+    margin-bottom: 0.3rem;
+    color: var(--text);
+  }
+
+  .pub-title a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+
+  .pub-title a:hover { border-color: var(--text); }
+
+  .pub-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+
+  .pub-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #4a4945;
+    margin-top: 0.4rem;
+  }
+
+  .pub-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.6rem;
+  }
+
+  .tag {
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    padding: 3px 9px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border-radius: 2px;
+    letter-spacing: 0.03em;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .skill-card-title {
+    font-size: 11.5px;
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-list {
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--line);
+    margin-top: 5rem;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    #about {
+      grid-template-columns: 1fr;
+    }
+    .hero-avatar {
+      justify-self: start;
+      order: -1;
+      width: 140px;
+      height: 170px;
+      font-size: 32px;
+    }
+    .nav-links { gap: 1rem; }
+    .news-item { grid-template-columns: 1fr; gap: 0.25rem; }
+    .news-date { padding-top: 0; }
+  }
+
+  /* Fade in on load */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  main > * {
+    animation: fadeUp 0.5s ease both;
+  }
+
+  #about { animation-delay: 0.05s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#about" class="nav-name">Jessica O. Ojo</a>
+    <ul class="nav-links">
+      <li><a href="#news">News</a></li>
+      <li><a href="#industry">Industry</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="mailto:jessica.ojo@mila.quebec">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div>
+      <div class="hero-name">Jessica O. Ojo</div>
+      <div class="hero-title">Research Engineer · LLM Evaluation · Montreal, QC</div>
+      <p class="hero-bio">
+        I build scalable evaluation infrastructure and benchmarking systems to understand how language models fail,
+        where they generalize, and what it takes to make them more reliable.
+        Currently finishing my MSc at McGill University, where my thesis focuses on evaluation methodology and
+        the limits of standard benchmarks for LLMs. Advised by <a href="https://dadelani.github.io/">David Adelani</a>.
+        Previously Research Engineer at Lelapa AI, and Data Scientist at Okra Technologies.
+      </p>
+      <div class="hero-links">
+        <a href="mailto:jessica.ojo@mila.quebec">Email</a>
+        <a href="https://github.com/JessicaOjo" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/jessica-ojo" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">CV (PDF)</a>
+        <a href="https://scholar.google.com/citations?user=H7PSf00AAAAJ&hl=en" target="_blank">Google Scholar</a>
+      </div>
+    </div>
+    <div class="hero-avatar">
+      <img src="photo2.jpeg" alt="Jessica Ojo">
+    </div>
+
+<!--    <div class="hero-avatar">JO</div>-->
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+    <div class="section-label">News</div>
+    <div class="news-list">
+
+      <div class="news-item">
+        <div class="news-date">May 2026</div>
+        <div class="news-text">
+          Graduating with an MSc in Computer Science from McGill University.<br>
+          Thesis: <em>Evaluation Mirage: A Layered Evaluation of Large Language Models and Language Identification for African NLP</em>.
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">April 2026</div>
+        <div class="news-text">
+          Guest lecture: <a href="https://docs.google.com/presentation/d/1146-wvjVUzxHU7AZZJplp24CZqG8HfBpdej5UGqYs5Q/edit?usp=sharing">Multilingual NLP</a>  - COMP/LING 345 @ McGill University
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">Apr 2026</div>
+        <div class="news-text">
+          Workshop organizer for the <a href="https://sites.google.com/view/africanlp2026/home">AfricaNLP workshop at EACL 2026</a>.
+        </div>
+      </div>
+
+<!--      <div class="news-item">-->
+<!--        <div class="news-date">Feb 2026</div>-->
+<!--        <div class="news-text">-->
+<!--          Organizer for Blacks History Month celebration for Black @ Mila.-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <div class="news-item">
+        <div class="news-date">Feb 2026</div>
+        <div class="news-text">
+          Talk on <a href="https://canva.link/9enmc75u670hwz7">The Evaluation Era</a> presented at Mila
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2025</div>
+        <div class="news-text">
+          <a href="#">IrokoBench</a> received an Outstanding Paper Award at NAACL 2025.
+          <span class="badge badge-award">Best Paper</span>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2025</div>
+        <div class="news-text">
+          <a href="#">AfroBench</a> accepted at ACL 2025 — evaluating LLM performance across 64 languages and 17 tasks.
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2025</div>
+        <div class="news-text">
+          Workshop organizer for the Centering Data in AI workshop at Deep Learning Indaba 2025.
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2024</div>
+        <div class="news-text">
+          Recipient of the Mila EDI Excellence Award and the McGill Graduate Excellence Recruitment Award.
+          <span class="badge badge-award">Award</span>
+        </div>
+      </div>
+
+<!--      <div class="news-item">-->
+<!--        <div class="news-date">2023</div>-->
+<!--        <div class="news-text">-->
+<!--          <a href="#">MasakhaNEWS</a> received Best Paper at AfricaNLP (ICLR 2023) and Area Chair Award at IJCNLP-AACL 2023.-->
+<!--          <span class="badge badge-award">Best Paper</span>-->
+<!--        </div>-->
+<!--      </div>-->
+
+    </div>
+  </section>
+
+  <!-- INDUSTRY -->
+  <section id="industry">
+    <div class="section-label">Industry</div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">MSc, Computer Science</span>
+        <span class="exp-period">2024 – May 2026</span>
+      </div>
+      <div class="exp-company">McGill University — Montreal, Canada</div>
+      <ul class="exp-bullets">
+        <li>Thesis: <em>Evaluation Mirage: A Layered Evaluation of Large Language Models and Language Identification for African NLP</em>.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Graduate Researcher</span>
+        <span class="exp-period">2024 – May 2026</span>
+      </div>
+      <div class="exp-company">Mila – Quebec AI Institute — Montreal, Canada</div>
+      <ul class="exp-bullets">
+        <li>6+ publications at top venues including ACL, NAACL, EMNLP, ICLR, and COLM — with 2 best paper awards.</li>
+        <li>Research focused on LLM evaluation methodology, benchmarking design, and failure-mode analysis at scale.</li>
+        <li>Active reviewer for ACL; workshop organizer for DLI 2025 and EACL 2026.</li>
+      </ul>
+    </div>
+
+<!--    <div class="exp-item">-->
+<!--      <div class="exp-header">-->
+<!--        <span class="exp-role">Research Engineer</span>-->
+<!--        <span class="exp-period">Sept 2023 – Nov 2025</span>-->
+<!--      </div>-->
+<!--      <div class="exp-company">Lelapa AI — Johannesburg, South Africa</div>-->
+<!--      <ul class="exp-bullets">-->
+<!--        <li>Built an end-to-end evaluation platform — dataset management, job orchestration, metrics computation, and visualization — enabling continuous benchmarking of 10+ models with automated regression alerts.</li>-->
+<!--        <li>Drove adoption across 5 cross-functional teams; standardized performance reporting and cut iteration cycles by 40%.</li>-->
+<!--        <li>Shipped the company's first revenue-generating product: intent detection, NER, and text classification for a multilingual chatbot.</li>-->
+<!--      </ul>-->
+<!--    </div>-->
+
+<!--    <div class="exp-item">-->
+<!--      <div class="exp-header">-->
+<!--        <span class="exp-role">Data Scientist</span>-->
+<!--        <span class="exp-period">Nov 2020 – July 2023</span>-->
+<!--      </div>-->
+<!--      <div class="exp-company">Okra Technologies — Lagos, Nigeria</div>-->
+<!--      <ul class="exp-bullets">-->
+<!--        <li>Developed a financial habit classification model that became a viral product, increasing revenue by 35%.</li>-->
+<!--        <li>Introduced graph-based fraud detection (Neo4j) and active learning pipelines, improving annotation efficiency by 28% and NER accuracy by 42%.</li>-->
+<!--        <li>Consolidated existing NLP models into a single Bi-LSTM architecture, reducing inference costs by 40%.</li>-->
+<!--      </ul>-->
+<!--    </div>-->
+
+    <div style="margin-top: 1.75rem;">
+      <a href="#" target="_blank" style="font-family: 'DM Mono', monospace; font-size: 12.5px; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; transition: color 0.15s, border-color 0.15s;" onmouseover="this.style.color='var(--text)';this.style.borderColor='var(--text)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--line)'">View full CV (PDF) →</a>
+    </div>
+
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="section-label">Selected Publications</div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="#">AfroBench: How Good are Large Language Models on African Languages?</a>
+      </div>
+      <div class="pub-meta">ACL 2025</div>
+      <div class="pub-desc">
+        Multi-task benchmark for evaluating LLM performance across 64 languages, 17 tasks, and 23 datasets.
+        Reveals systematic capability gaps in reasoning and knowledge tasks for low-resource settings.
+      </div>
+      <div class="pub-tags">
+        <span class="tag">benchmarking</span>
+        <span class="tag">evaluation</span>
+        <span class="tag">LLMs</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="#">IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models</a>
+        <span class="badge badge-award">Outstanding Paper · NAACL 2025</span>
+      </div>
+      <div class="pub-meta">NAACL 2025</div>
+      <div class="pub-desc">
+        Evaluates whether LLMs can solve harder tasks beyond basic classification — covering NLI, MGSM, and MMLU-style benchmarks for African languages.
+      </div>
+      <div class="pub-tags">
+        <span class="tag">benchmarking</span>
+        <span class="tag">evaluation</span>
+        <span class="tag">reasoning</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="#">DIVERS-Bench: Evaluating Language Identification Across Domain Shifts and Code-Switching</a>
+      </div>
+      <div class="pub-meta">WMDQS workshop, COLM 2025</div>
+      <div class="pub-desc">
+        Stress-tests language identification systems on noisy, informal, and code-switched inputs. Reveals severe performance degradation (often &gt;30 F1 points) outside clean monolingual data.
+      </div>
+      <div class="pub-tags">
+        <span class="tag">evaluation</span>
+        <span class="tag">robustness</span>
+        <span class="tag">failure modes</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="#">Reassessing Speech Translation for Low-Resource Languages: Do LLMs Redefine the State-of-the-Art Against Cascaded Models?</a>
+      </div>
+      <div class="pub-meta">MRL workshop, EMNLP 2025</div>
+      <div class="pub-desc">
+        Systematic comparison of audio-capable LLMs vs. cascaded ASR+MT systems. Proposed 2-stage ASR correction strategy reduced WER by 54% and achieved 5.8× BLEU improvements.
+      </div>
+      <div class="pub-tags">
+        <span class="tag">speech</span>
+        <span class="tag">evaluation</span>
+        <span class="tag">benchmarking</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="#">InkubaLM: A Small Language Model for Low-Resource African Languages</a>
+      </div>
+      <div class="pub-meta">Preprint</div>
+      <div class="pub-desc">
+        Demonstrates that small, well-designed models can be more practical than large LLMs in cost-sensitive, multilingual production environments.
+      </div>
+      <div class="pub-tags">
+        <span class="tag">language models</span>
+        <span class="tag">efficiency</span>
+        <span class="tag">production</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="#">MasakhaNEWS: News Topic Classification for African Languages</a>
+        <span class="badge badge-award">Best Paper · AfricaNLP @ ICLR 2023</span>
+      </div>
+      <div class="pub-meta">AfricanNLP workshop, ICLR 2023 · IJCNLP-AACL 2023</div>
+      <div class="pub-desc">
+        Standardized benchmark datasets covering geographically and typologically diverse African languages for news topic classification.
+      </div>
+      <div class="pub-tags">
+        <span class="tag">datasets</span>
+        <span class="tag">benchmarking</span>
+        <span class="tag">classification</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label">Technical Strengths</div>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-card-title">Core</div>
+        <div class="skill-list">Python · Data pipelines · Dataset curation · Scalable evaluation systems</div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-title">Infra & MLOps</div>
+        <div class="skill-list">MLflow · W&B · Airflow · Docker · Slurm · Kubernetes · AWS · Azure</div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-title">Evaluation & ML</div>
+        <div class="skill-list">Benchmark design · Regression detection · Failure-mode analysis · Statistical testing · Human-in-the-loop eval</div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-title">Observability</div>
+        <div class="skill-list">Prometheus · Grafana · MongoDB · LLM inference (HF, vLLM, API)</div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Jessica O. Ojo · Montreal, QC · jessica.ojo@mila.quebec
+</footer>
+
+</body>
