@@ -342,6 +342,11 @@
     line-height: 1.65;
     color: #3a3935;
   }
+  .exp-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #3a3935;
+  }
 
   /* PUBLICATIONS */
   .pub-item {
@@ -478,7 +483,7 @@
     <a href="#about" class="nav-name">Jessica O. Ojo</a>
     <ul class="nav-links">
       <li><a href="#news">News</a></li>
-      <li><a href="#industry">Industry</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="mailto:jessica.ojo@mila.quebec">Contact</a></li>
@@ -492,7 +497,7 @@
   <section id="about" aria-labelledby="about-heading">
     <div>
       <h1 class="hero-name" id="about-heading">Jessica O. Ojo</h1>
-      <p class="hero-title">Research Engineer · LLM Evaluation · Montreal, QC </p>
+      <p class="hero-title">Research Engineer · LLM Evaluation · Montreal, QC</p>
       <p class="hero-bio">
         I build scalable evaluation infrastructure and benchmarking systems to understand how language models fail,
         where they generalize, and what it takes to make them more reliable.
@@ -500,11 +505,19 @@
         the limits of standard benchmarks for LLMs. Advised by <a href="https://dadelani.github.io/">David Adelani</a>.
         Previously Research Engineer at Lelapa AI, and Data Scientist at Okra Technologies.
       </p>
+      <p style="font-family: 'DM Mono', monospace; font-size: 13.5px;
+                color: #2c5f8a; margin-top: 1rem; margin-bottom: 0.75rem;
+                letter-spacing: 0.04em; border-left: 2px solid #2c5f8a;
+                padding-left: 10px;">
+<!--      <p style="font-family: 'DM Mono', monospace; font-size: 15.5px; color: #2c5f8a; margin-top: 0.4rem; letter-spacing: 0.03em; margin-bottom: 0.75rem">-->
+        Seeking roles building systems that advance how we understand and evaluate machine learning models.
+      </p>
+
       <div class="hero-links">
         <a href="mailto:jessica.ojo@mila.quebec">Email</a>
         <a href="https://github.com/JessicaOjo" target="_blank">GitHub</a>
         <a href="https://linkedin.com/in/jessica-ojo" target="_blank">LinkedIn</a>
-        <a href="#" target="_blank">CV (PDF)</a>
+        <a href="https://docs.google.com/document/d/1is2rgwo0fihFWz_vIwCdVMKYxxUE59LZPNzqy8rVPqE/edit?usp=sharing" target="_blank">CV (PDF)</a>
         <a href="https://scholar.google.com/citations?user=H7PSf00AAAAJ&hl=en" target="_blank">Google Scholar</a>
       </div>
     </div>
@@ -529,7 +542,7 @@
       </div>
 
       <div class="news-item">
-        <div class="news-date">April 2026</div>
+        <div class="news-date">Apr 2026</div>
         <div class="news-text">
           Guest lecture: <a href="https://docs.google.com/presentation/d/1146-wvjVUzxHU7AZZJplp24CZqG8HfBpdej5UGqYs5Q/edit?usp=sharing">Multilingual NLP</a>  - COMP/LING 345 @ McGill University
         </div>
@@ -559,15 +572,15 @@
       <div class="news-item">
         <div class="news-date">2025</div>
         <div class="news-text">
-          <a href="#">IrokoBench</a> received an Outstanding Paper Award at NAACL 2025.
-          <span class="badge badge-award">Best Paper</span>
+          <a href="https://aclanthology.org/2025.naacl-long.139/">IrokoBench</a> received an Outstanding Paper Award at NAACL 2025.
+          <span class="badge badge-award">Outstanding Paper</span>
         </div>
       </div>
 
       <div class="news-item">
         <div class="news-date">2025</div>
         <div class="news-text">
-          <a href="#">AfroBench</a> accepted at ACL 2025 — evaluating LLM performance across 64 languages and 17 tasks.
+          <a href="https://aclanthology.org/2025.findings-acl.976/">AfroBench</a> accepted at ACL 2025 — evaluating LLM performance across 64 languages and 17 tasks.
         </div>
       </div>
 
@@ -581,25 +594,32 @@
       <div class="news-item">
         <div class="news-date">2024</div>
         <div class="news-text">
+          Talk on <a href="https://www.youtube.com/watch?v=Vu8J07Men_4&t=44s">IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models</a> at Cohere
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2024</div>
+        <div class="news-text">
           Recipient of the Mila EDI Excellence Award and the McGill Graduate Excellence Recruitment Award.
           <span class="badge badge-award">Award</span>
         </div>
       </div>
 
-<!--      <div class="news-item">-->
-<!--        <div class="news-date">2023</div>-->
-<!--        <div class="news-text">-->
-<!--          <a href="#">MasakhaNEWS</a> received Best Paper at AfricaNLP (ICLR 2023) and Area Chair Award at IJCNLP-AACL 2023.-->
-<!--          <span class="badge badge-award">Best Paper</span>-->
-<!--        </div>-->
-<!--      </div>-->
+      <div class="news-item">
+        <div class="news-date">2023</div>
+        <div class="news-text">
+          <a href="#">MasakhaNEWS</a> received Best Paper at AfricaNLP (ICLR 2023) and Area Chair Award at IJCNLP-AACL 2023.
+          <span class="badge badge-award">Best Paper</span>
+        </div>
+      </div>
 
     </div>
   </section>
 
-  <!-- INDUSTRY -->
-  <section id="industry" aria-labelledby="industry-heading">
-    <h2 class="section-label" id="industry-heading">Industry</h2>
+  <!-- experience -->
+  <section id="experience" aria-labelledby="experience-heading">
+    <h2 class="section-label" id="experience-heading">Experience</h2>
 
     <div class="exp-item">
       <div class="exp-header">
@@ -625,18 +645,29 @@
       </ul>
     </div>
 
-<!--    <div class="exp-item">-->
-<!--      <div class="exp-header">-->
-<!--        <span class="exp-role">Research Engineer</span>-->
-<!--        <span class="exp-period">Sept 2023 – Nov 2025</span>-->
-<!--      </div>-->
-<!--      <div class="exp-company">Lelapa AI — Johannesburg, South Africa</div>-->
-<!--      <ul class="exp-bullets">-->
-<!--        <li>Built an end-to-end evaluation platform — dataset management, job orchestration, metrics computation, and visualization — enabling continuous benchmarking of 10+ models with automated regression alerts.</li>-->
-<!--        <li>Drove adoption across 5 cross-functional teams; standardized performance reporting and cut iteration cycles by 40%.</li>-->
-<!--        <li>Shipped the company's first revenue-generating product: intent detection, NER, and text classification for a multilingual chatbot.</li>-->
-<!--      </ul>-->
-<!--    </div>-->
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Research Engineer</span>
+        <span class="exp-period">Sept 2023 – Nov 2025</span>
+      </div>
+      <div class="exp-company">Lelapa AI — Johannesburg, South Africa</div>
+      <p class="exp-desc">Built and drove adoption of end-to-end evaluation infrastructure —
+        covering benchmark development, job orchestration, failure-mode diagnostics, and
+        continuous regression monitoring across 10+ speech and language models. Worked
+        cross-functionally as an internal evals-as-a-service layer supporting research,
+        engineering, and product teams; reducing iteration cycles by 40%. </p>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Data Scientist</span>
+        <span class="exp-period">Nov 2020 – July 2023</span>
+      </div>
+      <div class="exp-company">Okra Technologies — Lagos, Nigeria</div>
+      <p class="exp-desc">Built and shipped production ML systems for fraud detection,
+      NLP classification, and financial behaviour modelling. Designed end-to-end ML
+      pipelines with automated retraining, experiment tracking, and API deployment.</p>
+    </div>
 
 <!--    <div class="exp-item">-->
 <!--      <div class="exp-header">-->
@@ -652,7 +683,7 @@
 <!--    </div>-->
 
     <div style="margin-top: 1.75rem;">
-      <a href="#" target="_blank" style="font-family: 'DM Mono', monospace; font-size: 12.5px; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; transition: color 0.15s, border-color 0.15s;" onmouseover="this.style.color='var(--text)';this.style.borderColor='var(--text)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--line)'">View full CV (PDF) →</a>
+      <a href="https://docs.google.com/document/d/1is2rgwo0fihFWz_vIwCdVMKYxxUE59LZPNzqy8rVPqE/edit?usp=sharing" target="_blank" style="font-family: 'DM Mono', monospace; font-size: 12.5px; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; transition: color 0.15s, border-color 0.15s;" onmouseover="this.style.color='var(--text)';this.style.borderColor='var(--text)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--line)'">View full CV (PDF) →</a>
     </div>
 
   </section>
@@ -663,7 +694,7 @@
 
     <article class="pub-item">
       <h3 class="pub-title">
-        <a href="#">AfroBench: How Good are Large Language Models on African Languages?</a>
+        <a href="https://aclanthology.org/2025.findings-acl.976/">AfroBench: How Good are Large Language Models on African Languages?</a>
       </h3>
       <div class="pub-meta">ACL 2025</div>
       <div class="pub-desc">
@@ -679,7 +710,7 @@
 
     <article class="pub-item">
       <h3 class="pub-title">
-        <a href="#">IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models</a>
+        <a href="https://aclanthology.org/2025.naacl-long.139/">IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models</a>
         <span class="badge badge-award">Outstanding Paper · NAACL 2025</span>
       </h3>
       <div class="pub-meta">NAACL 2025</div>
@@ -695,7 +726,7 @@
 
     <article class="pub-item">
       <h3 class="pub-title">
-        <a href="#">DIVERS-Bench: Evaluating Language Identification Across Domain Shifts and Code-Switching</a>
+        <a href="https://arxiv.org/abs/2509.17768#:~:text=DIVERS%2DBench%3A%20Evaluating%20Language%20Identification%20Across,Zina%20Kamel%2C%20David%20Ifeoluwa%20Adelani">DIVERS-Bench: Evaluating Language Identification Across Domain Shifts and Code-Switching</a>
       </h3>
       <div class="pub-meta">WMDQS workshop, COLM 2025</div>
       <div class="pub-desc">
@@ -710,7 +741,7 @@
 
     <article class="pub-item">
       <h3 class="pub-title">
-        <a href="#">Reassessing Speech Translation for Low-Resource Languages: Do LLMs Redefine the State-of-the-Art Against Cascaded Models?</a>
+        <a href="https://aclanthology.org/2025.mrl-main.11.pdf">Reassessing Speech Translation for Low-Resource Languages: Do LLMs Redefine the State-of-the-Art Against Cascaded Models?</a>
       </h3>
       <div class="pub-meta">MRL workshop, EMNLP 2025</div>
       <div class="pub-desc">
@@ -725,7 +756,7 @@
 
     <article class="pub-item">
       <h3 class="pub-title">
-        <a href="#">InkubaLM: A Small Language Model for Low-Resource African Languages</a>
+        <a href="https://arxiv.org/html/2408.17024v1">InkubaLM: A Small Language Model for Low-Resource African Languages</a>
       </h3>
       <div class="pub-meta">Preprint</div>
       <div class="pub-desc">
@@ -740,10 +771,10 @@
 
     <article class="pub-item">
       <h3 class="pub-title">
-        <a href="#">MasakhaNEWS: News Topic Classification for African Languages</a>
-        <span class="badge badge-award">Best Paper · AfricaNLP @ ICLR 2023</span>
+        <a href="https://aclanthology.org/2023.ijcnlp-main.10/">MasakhaNEWS: News Topic Classification for African Languages</a>
+        <span class="badge badge-award">Area Chair Award · IJCNLP-AACL 2023</span>
       </h3>
-      <div class="pub-meta">AfricanNLP workshop, ICLR 2023 · IJCNLP-AACL 2023</div>
+      <div class="pub-meta">IJCNLP-AACL 2023</div>
       <div class="pub-desc">
         Standardized benchmark datasets covering geographically and typologically diverse African languages for news topic classification.
       </div>
@@ -753,6 +784,10 @@
         <span class="tag">classification</span>
       </div>
     </article>
+
+    <div style="margin-top: 1.75rem;">
+      <a href="https://scholar.google.com/citations?user=H7PSf00AAAAJ&hl=en" target="_blank" style="font-family: 'DM Mono', monospace; font-size: 12.5px; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; transition: color 0.15s, border-color 0.15s;" onmouseover="this.style.color='var(--text)';this.style.borderColor='var(--text)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--line)'">View full publication list →</a>
+    </div>
 
   </section>
 
